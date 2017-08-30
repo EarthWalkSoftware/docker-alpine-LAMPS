@@ -3,7 +3,7 @@
 
 ____
 
-The docker-alpine-LAMPS repository contains a group of scripts designed to install a "latest" version of a LAMPS system (Linux-Apache-MariaDB-Php-Subversion) system.  The following docker-based Alpine Linux images will be installed on a Linux host:
+The docker-alpine-LAMPS repository contains a group of shell scripts designed to install a "latest" version of a LAMPS system (Linux-Apache-MariaDB-Php-Subversion) system.  The following docker-based Alpine Linux images will be installed on a Linux host:
 
   - Apache 2.2 Web Server
     + from nimmis/alpine-apache-php7 (https://hub.docker.com/r/nimmis/apache-php7/)  
