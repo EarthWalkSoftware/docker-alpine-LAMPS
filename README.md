@@ -6,10 +6,7 @@ ____
 The docker-alpine-LAMPS repository contains a group of shell scripts designed to install a "latest" version of a LAMPS system (Linux-Apache-MariaDB-Php-Subversion) system.  The following docker-based Alpine Linux images will be installed on a Linux host:
 
   - Apache 2.2 Web Server
-    + from nimmis/alpine-apache-php7 (https://hub.docker.com/r/nimmis/apache-php7/)  
-or
-    + from nimmis/alpine-apache-php5 (https://hub.docker.com/r/nimmis/apache-php5/)  
-or both
+    + from nimmis/alpine-apache (https://hub.docker.com/r/nimmis/apache/)  
   
   - MariaDB Database Server (a MySql spin)
     + from nimmis/alpine-mariadb (https://hub.docker.com/r/nimmis/alpine-mariadb/)
@@ -25,4 +22,9 @@ or both
     + from phpmyadmin/phpmyadmin (https://github.com/phpmyadmin/docker)
 
 All of these docker images are well documented and maintained on Docker Hub (hub.docker.com), with the source maintained on GitHub (github.com).  The total overhead comes to about 600 MB when loaded on a minimal Debian 9 (Stretch) Linux system.
+___
+
+### Installation
+
+
 ___
