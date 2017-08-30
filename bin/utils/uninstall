@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# **************************************************************************
+# **************************************************************************
+#
+#	uninstall-LAMPS
+#
+#	Un-install LAMPS (Linux-Apache-MariaDB-Subversion) Docker Images
+#
+# **************************************************************************
+#
+# @author Jay Wheeler.
+# @version 0.1.0
+# @copyright © 2017. EarthWalk Software.
+# @license Licensed under the Academic Free License version 3.0
+#
+# **************************************************************************
+#
+#	Copyright © 2017. EarthWalk Software
+#	Licensed under the Academic Free License, version 3.0.
+#
+#	Refer to the file named License.txt provided with the source,
+#	or from
+#
+#	http://opensource.org/licenses/academic.php
+#
+# **************************************************************************
+# **************************************************************************
+
+# **************************************************************************
+#
+#  nimmis/alpine-apache-php7:latest --> apache-php7:latest
+#
+# **************************************************************************
+docker stop apache
+docker rm   apache
+docker rmi  apache-php7:latest
+
+# **************************************************************************
+#
+#  nimmis/alpine-apache-php5:latest --> apache-php5:latest
+#
+# **************************************************************************
+docker stop apache-php5
+docker rm   apache-php5
+docker rmi  apache-php5:latest
+
+# **************************************************************************
+#
+#  nimmis/alpine-mariadb:latest --> mariadb:latest
+#
+# **************************************************************************
+docker stop mariadb
+docker rm   mariadb
+docker rmi  mariadb:latest
+
+# **************************************************************************
+#
+#  earthwalksoftware/alpine-svn:latest --> apache-svn:latest
+#
+# **************************************************************************
+docker stop apache-svn
+docker rm   apache-svn
+docker rmi  alpine-svn:latest
+
+# **************************************************************************
+#
+#  phpmyadmin/phpmyadmin:latest --> phpmyadmin:latest
+#
+# **************************************************************************
+docker stop phpmyadmin
+docker rm   phpmyadmin
+docker rmi  phpmyadmin:latest
+
+# **************************************************************************
+#
+#  Show installed images
+#
+# **************************************************************************
+docker images
