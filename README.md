@@ -1,4 +1,4 @@
-# docker-alpine-LAMPS
+# docker-alpine-LAMPS v 0.1.0
 #### LAMPS (Linux-Apache-Mariadb-Php-Subversion) in a group of docker Alpine Linux images
 
 ____
