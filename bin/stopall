@@ -1,5 +1,0 @@
-docker stop apache
-docker stop apache-php5
-docker stop apache-svn
-docker stop mariadb
-docker stop phpmyadmin

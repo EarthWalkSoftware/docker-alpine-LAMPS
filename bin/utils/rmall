@@ -1,5 +1,0 @@
-docker rm apache
-docker rm apache-php5
-docker rm apache-svn
-docker rm mariadb
-docker rm phpmyadmin

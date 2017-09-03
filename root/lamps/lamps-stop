@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# =========================================================================
+# =========================================================================
+#
+#	lamps-stop
+#	  Stop the LAMPS containers.
+#
+# =========================================================================
+#
+# @author Jay Wheeler.
+# @version 0.1.0
+# @copyright © 2017. EarthWalk Software.
+# @license Licensed under the Academic Free License version 3.0
+# @package LAMPS
+# @subpackage lamps-stop
+#
+# =========================================================================
+#
+#	Copyright © 2017. EarthWalk Software
+#	Licensed under the Academic Free License, version 3.0.
+#
+#	Refer to the file named License.txt provided with the source,
+#	or from
+#
+#		http://opensource.org/licenses/academic.php
+#
+# =========================================================================
+# =========================================================================
+
+docker stop apache
+docker stop apache-php5
+docker stop apache-svn
+docker stop mariadb
+docker stop phpmyadmin

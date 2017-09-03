@@ -1,5 +1,0 @@
-docker tag nimmis/alpine-apache-php7:latest apache-php7:latest
-docker tag nimmis/alpine-apache-php5:latest apache-php5:latest
-docker tag nimmis/alpine-mariadb:latest mariadb:latest
-docker tag earthwalksoftware/alpine-svn:latest apache-svn:latest
-docker tag phpmyadmin/phpmyadmin:latest phpmyadmin:latest

@@ -1,5 +1,0 @@
-docker restart apache
-docker restart apache-php5
-docker restart apache-svn
-docker restart mariadb
-docker restart phpmyadmin

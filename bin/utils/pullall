@@ -1,5 +1,0 @@
-docker pull nimmis/alpine-apache-php7:latest
-docker pull nimmis/alpine-apache-php5:latest
-docker pull nimmis/alpine-mariadb:latest
-docker pull earthwalksoftware/alpine-svn:latest
-docker pull phpmyadmin/phpmyadmin:latest

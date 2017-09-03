@@ -1,0 +1,94 @@
+#!/bin/sh
+
+# =========================================================================
+# =========================================================================
+#
+#	lamps-run
+#	  Create & Run the LAMPS containers.
+#
+# =========================================================================
+#
+# @author Jay Wheeler.
+# @version 0.1.0
+# @copyright © 2017. EarthWalk Software.
+# @license Licensed under the Academic Free License version 3.0
+# @package LAMPS
+# @subpackage lamps-run
+#
+# =========================================================================
+#
+#	Copyright © 2017. EarthWalk Software
+#	Licensed under the Academic Free License, version 3.0.
+#
+#	Refer to the file named License.txt provided with the source,
+#	or from
+#
+#		http://opensource.org/licenses/academic.php
+#
+# =========================================================================
+# =========================================================================
+
+LAMPS_ROOT=/media/sf_docker/data/debian-9-server
+
+LAMPS_APACHE_HTTP=80
+LAMPS_APACHE_HTTPS=443
+
+LAMPS_APACHE_5_HTTP=8080
+LAMPS_APACHE_5_HTTPS=8081
+
+LAMPS_SVN_HTTP=80
+
+LAMPS_MARIADB=3306
+LAMPS_DB=db
+LAMPS_ROOT=yes
+LAMPS_ROOT_PASS=root-password
+LAMPS_USER_NAME=user-name
+LAMPS_USER_PASS=user-password
+
+LAMPS_PHPMYADMIN=9000
+
+# =========================================================================
+# =========================================================================
+
+docker run -d \
+           --name=apache \
+           --restart unless-stopped \
+           -p $LAMPS_APACHE_HTTP:80 -p $LAMPS_APACHE_HTTPS:443\
+           -v $LAMPS_ROOT/apache:/web \
+       apache:latest
+#
+docker run -d \
+           --name=apache-php5 \
+           --restart unless-stopped \
+           -p $LAMPS_APACHE_5_HTTP:80 -p $LAMPS_APACHE_5_HTTPS:443 \
+           -v $LAMPS_ROOT/apache-php5:/web \
+       apache-php5:latest
+#
+docker run -d \
+           --name=apache-svn \
+           --restart unless-stopped \
+           -p $LAMPS_SVN_HTTP:80 \
+           -v $LAMPS_ROOT/apache-svn/svn:/svn \
+       apache-svn:latest
+#
+docker run -d \
+           --name=mariadb \
+           --restart unless-stopped \
+           -p $LAMPS_DBPORT:3306 \
+           -e MARIADB_DATABASE=$LAMPS_DB \
+           -e MARIADB_ROOT_PASSWORD=$LAMPS_ROOT_PASS \
+           -e MARIADB_REMOTE_ROOT=$LAMPS_ROOT \
+           -e MARIADB_USER=$LAMPS_USER_NAME \
+           -e MARIADB_PASSWORD=$LAMPS_USER_PASS \
+           -v $LAMPS_ROOT/mariadb:/data \
+       mariadb:latest
+#
+docker run -d \
+           --name phpmyadmin \
+           --restart unless-stopped \
+           --link mariadb:db \
+           -p $LAMPS_PHPMYADMIN:80 \
+           -e MYSQL_ROOT_PASSWORD=$LAMPS_ROOT_PASS \
+       phpmyadmin:latest
+#
+docker ps

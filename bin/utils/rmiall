@@ -1,5 +1,0 @@
-docker rmi apache-php7
-docker rmi apache-php5
-docker rmi mariadb
-docker rmi apache-svn
-docker rmi phpmyadmin

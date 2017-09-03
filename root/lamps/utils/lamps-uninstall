@@ -3,7 +3,7 @@
 # **************************************************************************
 # **************************************************************************
 #
-#	uninstall-LAMPS
+#	lamps-uninstall
 #
 #	Un-install LAMPS (Linux-Apache-MariaDB-Subversion) Docker Images
 #
@@ -72,9 +72,3 @@ docker stop phpmyadmin
 docker rm   phpmyadmin
 docker rmi  phpmyadmin:latest
 
-# **************************************************************************
-#
-#  Show installed images
-#
-# **************************************************************************
-docker images

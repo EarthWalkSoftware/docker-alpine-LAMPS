@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# =========================================================================
+# =========================================================================
+#
+#	lamps-rmi
+#	  Remove the LAMPS images.
+#
+# =========================================================================
+#
+# @author Jay Wheeler.
+# @version 0.1.0
+# @copyright © 2017. EarthWalk Software.
+# @license Licensed under the Academic Free License version 3.0
+# @package LAMPS
+# @subpackage lamps-rmi
+#
+# =========================================================================
+#
+#	Copyright © 2017. EarthWalk Software
+#	Licensed under the Academic Free License, version 3.0.
+#
+#	Refer to the file named License.txt provided with the source,
+#	or from
+#
+#		http://opensource.org/licenses/academic.php
+#
+# =========================================================================
+# =========================================================================
+
+docker rmi apache-php7
+docker rmi apache-php5
+docker rmi mariadb
+docker rmi apache-svn
+docker rmi phpmyadmin

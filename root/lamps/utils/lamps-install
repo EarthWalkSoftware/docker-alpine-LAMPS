@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# =========================================================================
+# =========================================================================
+#
+#	lamps-install
+#
+#	Install LAMPS (Linux-Apache-MariaDB-Subversion) Docker Images
+#
+# =========================================================================
+#
+# @author Jay Wheeler.
+# @version 0.1.0
+# @copyright © 2017. EarthWalk Software.
+# @license Licensed under the Academic Free License version 3.0
+#
+# =========================================================================
+#
+#	Copyright © 2017. EarthWalk Software
+#	Licensed under the Academic Free License, version 3.0.
+#
+#	Refer to the file named License.txt provided with the source,
+#	or from
+#
+#		http://opensource.org/licenses/academic.php
+#
+# =========================================================================
+# =========================================================================
+
+# =========================================================================
+#
+#  nimmis/alpine-apache-php7:latest --> apache-php7:latest
+#
+# =========================================================================
+docker pull nimmis/alpine-apache-php7:latest
+docker tag  nimmis/alpine-apache-php7:latest apache-php7:latest
+docker rmi  nimmis/alpine-apache-php7:latest
+
+# =========================================================================
+#
+#  nimmis/alpine-apache-php5:latest --> apache-php5:latest
+#
+# =========================================================================
+docker pull nimmis/alpine-apache-php5:latest
+docker tag  nimmis/alpine-apache-php5:latest apache-php5:latest
+docker rmi  nimmis/alpine-apache-php5:latest
+
+# =========================================================================
+#
+#  nimmis/alpine-mariadb:latest --> mariadb:latest
+#
+# =========================================================================
+docker pull nimmis/alpine-mariadb:latest
+docker tag  nimmis/alpine-mariadb:latest mariadb:latest
+docker rmi  nimmis/alpine-mariadb:latest
+
+# =========================================================================
+#
+#  earthwalksoftware/alpine-svn:latest --> apache-svn:latest
+#
+# =========================================================================
+docker pull earthwalksoftware/alpine-svn:latest
+docker tag  earthwalksoftware/alpine-svn:latest apache-svn:latest
+docker rmi  earthwalksoftware/alpine-svn:latest
+
+# =========================================================================
+#
+#  phpmyadmin/phpmyadmin:latest --> phpmyadmin:latest
+#
+# =========================================================================
+docker pull phpmyadmin/phpmyadmin:latest
+docker tag  phpmyadmin/phpmyadmin:latest phpmyadmin:latest
+docker rmi  phpmyadmin/phpmyadmin:latest

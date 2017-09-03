@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# =========================================================================
+# =========================================================================
+#
+#	lamps-tag
+#	  Localize the LAMPS containers.
+#
+# =========================================================================
+#
+# @author Jay Wheeler.
+# @version 0.1.0
+# @copyright © 2017. EarthWalk Software.
+# @license Licensed under the Academic Free License version 3.0
+# @package LAMPS
+# @subpackage lamps-tag
+#
+# =========================================================================
+#
+#	Copyright © 2017. EarthWalk Software
+#	Licensed under the Academic Free License, version 3.0.
+#
+#	Refer to the file named License.txt provided with the source,
+#	or from
+#
+#		http://opensource.org/licenses/academic.php
+#
+# =========================================================================
+# =========================================================================
+
+docker tag nimmis/alpine-apache-php7:latest apache-php7:latest
+docker tag nimmis/alpine-apache-php5:latest apache-php5:latest
+docker tag nimmis/alpine-mariadb:latest mariadb:latest
+docker tag earthwalksoftware/alpine-svn:latest apache-svn:latest
+docker tag phpmyadmin/phpmyadmin:latest phpmyadmin:latest
