@@ -1,9 +1,8 @@
 # =========================================================================
 # =========================================================================
 #
-#	Dockerfile
-#	  Dockerfile to create docker image used to 
-#            install the LAMPS scripts.
+#	lamps-run-settings
+#	  Variable settings for the lamps-run script.
 #
 # =========================================================================
 #
@@ -12,7 +11,7 @@
 # @copyright © 2017. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
 # @package LAMPS
-# @subpackage Dockerfile
+# @subpackage lamps-run
 #
 # =========================================================================
 #
@@ -26,28 +25,23 @@
 #
 # =========================================================================
 # =========================================================================
-FROM nimmis/alpine-micro:latest
 
-MAINTAINER Jay Wheeler <earthwalksoftware@gmail.com>
+LAMPS_USER_NAME=jay		# the user name
+LAMPS_USER_PASS=7mcMF596gcYa	# the user password
 
-#VOLUME /scripts
-#VOLUME /config
-#VOLUME /data-lamps
+LAMPS_APACHE_HTTP=80		# apache http  port
+LAMPS_APACHE_HTTPS=443		# apache https port
 
-ENV LUID=0
-ENV LGID=0
+LAMPS_APACHE_5_HTTP=8080	# apache-php5 http  port
+LAMPS_APACHE_5_HTTPS=8081	# apache-php5 https port
 
-ENV LAMPS=/scripts/bin
-ENV LCONFIG=/config
-ENV LDATA=/data-lamps
+LAMPS_SVN_HTTP=90		# subversion http port
 
-VOLUME /scripts
-VOLUME /config
-VOLUME /data-lamps
+LAMPS_MARIADB=3306		# mariadb standard port
+LAMPS_DB=debian-9-server	# database name
+LAMPS_ROOT=yes			# allow remote root password entry
+LAMPS_ROOT_PASS=BpdZkid2Pkub	# the database 'root' password
 
-COPY root/. /
+LAMPS_PHPMYADMIN=9000		# phpMyAdmin port
 
-COPY installLamps.sh /
-RUN chmod +x /installLamps.sh
-
-CMD ["/installLamps.sh"]
+# absolute path to the lamps folder

@@ -3,7 +3,7 @@
 # =========================================================================
 # =========================================================================
 #
-#	lamps-run
+#	lamps-init
 #	  Create & Run the LAMPS containers the first time.
 #
 # =========================================================================
@@ -13,7 +13,7 @@
 # @copyright © 2017. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
 # @package LAMPS
-# @subpackage lamps-run
+# @subpackage lamps-init
 #
 # =========================================================================
 #
@@ -42,8 +42,6 @@ echo "Configuration: $LCONFIG"
 
 . $LCONFIG
 
-echo "db: $LAMPS_DATA"
-
 # =========================================================================
 # =========================================================================
 
@@ -67,6 +65,8 @@ docker run -d \
            --name=apache-svn \
            --restart unless-stopped \
            -p $LAMPS_SVN_HTTP:80 \
+           -e SVN_USER=$LAMPS_USER_NAME \
+           -e SVN_PASS=$LAMPS_USER_PASS \
            -v $LAMPS_DATA/apache-svn/svn:/svn \
        apache-svn:latest
 #
@@ -74,7 +74,11 @@ docker run -d \
            --name=mariadb \
            --restart unless-stopped \
            -p $LAMPS_MARIADB:3306 \
+           -e MARIADB_DATABASE=$LAMPS_DB \
+           -e MARIADB_ROOT_PASSWORD=$LAMPS_ROOT_PASS \
            -e MARIADB_REMOTE_ROOT=$LAMPS_ROOT \
+           -e MARIADB_USER=$LAMPS_USER_NAME \
+           -e MARIADB_PASSWORD=$LAMPS_USER_PASS \
            -v $LAMPS_DATA/mariadb:/data \
        mariadb:latest
 #
