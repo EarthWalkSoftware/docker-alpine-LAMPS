@@ -26,8 +26,8 @@
 # =========================================================================
 # =========================================================================
 
-LAMPS_USER_NAME=jay		# the user name
-LAMPS_USER_PASS=7mcMF596gcYa	# the user password
+LAMPS_USER_NAME=$USER		# the user name
+LAMPS_USER_PASS=<user-password>	# the user password
 
 LAMPS_APACHE_HTTP=80		# apache http  port
 LAMPS_APACHE_HTTPS=443		# apache https port
@@ -38,9 +38,9 @@ LAMPS_APACHE_5_HTTPS=8081	# apache-php5 https port
 LAMPS_SVN_HTTP=90		# subversion http port
 
 LAMPS_MARIADB=3306		# mariadb standard port
-LAMPS_DB=debian-9-server	# database name
+LAMPS_DB=db			# database name
 LAMPS_ROOT=yes			# allow remote root password entry
-LAMPS_ROOT_PASS=BpdZkid2Pkub	# the database 'root' password
+LAMPS_ROOT_PASS=<root-password>	# the database 'root' password
 
 LAMPS_PHPMYADMIN=9000		# phpMyAdmin port
 
