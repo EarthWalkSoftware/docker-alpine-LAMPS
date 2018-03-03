@@ -2,21 +2,20 @@
 # =========================================================================
 #
 #	Dockerfile
-#	  Dockerfile to create docker image used to 
-#            install the LAMPS scripts.
+#	  Dockerfile to create the earthwalksoftware/alpine-LAMPS scripts.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.1.0
-# @copyright © 2017. EarthWalk Software.
+# @version 0.1.1
+# @copyright © 2017, 2018. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
-# @package LAMPS
+# @package EarthWalkSoftware/LAMPS
 # @subpackage Dockerfile
 #
 # =========================================================================
 #
-#	Copyright © 2017. EarthWalk Software
+#	Copyright © 2017, 2018. EarthWalk Software
 #	Licensed under the Academic Free License, version 3.0.
 #
 #	Refer to the file named License.txt provided with the source,
